@@ -5,9 +5,7 @@ author: Shritama Ray
 date: 9/22/2022
 ---
 
-Homework 1
-
-# Problem 1
+## Problem 1
 
 Load the **penguins** dataset:
 
@@ -21,11 +19,15 @@ nrow(penguins)
 ncol(penguins)
 ```
 
-**Summary:**
-This dataset consists of a 344 x 8 tibble.
-The variables are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year.
+Descriptive Statistics:
+```{r}
+summary(penguins)
+```
+
+**Discussion:**
+This dataset consists of a 344 row x 8 column tibble.
+The variables are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year. There are **3 species** of penguins represented, across **3 islands.** The mean flipper length of the penguins is **200.9 mm.** 
 
 # Section 2
 
-I can take the mean of the sample, too!
-The mean is `r mean(samp)`.
+
