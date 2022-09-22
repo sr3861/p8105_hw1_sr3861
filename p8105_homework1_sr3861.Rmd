@@ -5,17 +5,25 @@ author: Shritama Ray
 date: 9/22/2022
 ---
 
-I'm an R Markdown document! 
+Homework 1
 
-# Section 1
+# Problem 1
 
-Here's a **code chunk** that samples from 
-a _normal distribution_:
+Load the **penguins** dataset:
 
 ```{r}
-samp = rnorm(100)
-length(samp)
+data("penguins", package = "palmerpenguins")
 ```
+
+Size of the dataset:
+```{r}
+nrow(penguins)
+ncol(penguins)
+```
+
+**Summary:**
+This dataset consists of a 344 x 8 tibble.
+The variables are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year.
 
 # Section 2
 
