@@ -1,6 +1,8 @@
 ---
-title: "Simple document"
+title: "P8105 Homework 1"
 output: github_document
+author: Shritama Ray
+date: 9/22/2022
 ---
 
 I'm an R Markdown document! 
