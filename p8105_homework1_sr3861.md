@@ -75,9 +75,70 @@ library(tidyverse)
 
 ``` r
 #Create scatter plot colored by species
-ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()+ xlab("Bill Length (mm)") + ylab("Flipper Length (mm)")
 ```
 
 ![](p8105_homework1_sr3861_files/figure-gfm/scatterplot-1.png)<!-- -->
 
-# Section 2
+``` r
+#Save plot
+ggsave("penguins_scatter.pdf", height = 4, width = 6)
+```
+
+## Problem 2
+
+**Create a data frame:**
+
+``` r
+#dataframe named 'problem2'
+problem2 = tibble(
+  # random sample of size 10 from standard normal distribution
+  vec_rand_10 = rnorm(10, mean = 0, sd = 1),
+  # logical vector indication whether sample elements are > 0 
+  vec_logical = vec_rand_10 > 0,
+  # character vector of length 10
+  vec_char = character(10),
+  # factor vector of length 10 with 3 factor levels
+  vec_factor = factor(c("L1", "L2", "L3", "L3","L3","L1","L3", "L2", "L1", "L1"))
+)
+```
+
+**Try to take the mean of each variable in the dataframe:**
+
+``` r
+mean(pull(problem2,vec_rand_10))
+```
+
+    ## [1] 0.4029201
+
+That works!
+
+``` r
+mean(pull(problem2,vec_logical))
+```
+
+    ## [1] 0.7
+
+That works too!
+
+``` r
+mean(pull(problem2,vec_char))
+```
+
+    ## Warning in mean.default(pull(problem2, vec_char)): argument is not numeric or
+    ## logical: returning NA
+
+    ## [1] NA
+
+That doesn’t work :(
+
+``` r
+mean(pull(problem2,vec_factor))
+```
+
+    ## Warning in mean.default(pull(problem2, vec_factor)): argument is not numeric or
+    ## logical: returning NA
+
+    ## [1] NA
+
+That doesn’t work either :(
