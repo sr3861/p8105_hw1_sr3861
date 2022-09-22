@@ -54,4 +54,30 @@ flipper_length_mm, body_mass_g, sex, and year. There are **3 species**
 of penguins represented, across **3 islands.** The mean flipper length
 of the penguins is **200.9 mm.**
 
+**Scatterplot of flipper length vs. bill length**
+
+``` r
+#Load tidyverse library
+```
+
+``` r
+library(tidyverse)
+```
+
+    ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+    ## ✔ ggplot2 3.3.6      ✔ purrr   0.3.4 
+    ## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+    ## ✔ tidyr   1.2.0      ✔ stringr 1.4.1 
+    ## ✔ readr   2.1.2      ✔ forcats 0.5.2 
+    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+
+``` r
+#Create scatter plot colored by species
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+```
+
+![](p8105_homework1_sr3861_files/figure-gfm/scatterplot-1.png)<!-- -->
+
 # Section 2

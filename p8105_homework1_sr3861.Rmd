@@ -9,24 +9,34 @@ date: 9/22/2022
 
 Load the **penguins** dataset:
 
-```{r}
+```{r load_penguins}
 data("penguins", package = "palmerpenguins")
 ```
 
 Size of the dataset:
-```{r}
+```{r penguins_size}
 nrow(penguins)
 ncol(penguins)
 ```
 
 Descriptive Statistics:
-```{r}
+```{r descriptive_stats}
 summary(penguins)
 ```
 
 **Discussion:**
 This dataset consists of a 344 row x 8 column tibble.
 The variables are species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex, and year. There are **3 species** of penguins represented, across **3 islands.** The mean flipper length of the penguins is **200.9 mm.** 
+
+**Scatterplot of flipper length vs. bill length**
+```{r load_tidyverse, message = FALSE}
+#Load tidyverse library
+```
+```{r scatterplot, warning = FALSE}
+library(tidyverse)
+#Create scatter plot colored by species
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+```
 
 # Section 2
 
