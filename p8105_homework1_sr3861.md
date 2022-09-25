@@ -1,7 +1,7 @@
 P8105 Homework 1
 ================
 Shritama Ray
-9/22/2022
+9/24/2022
 
 ## Problem 1
 
@@ -109,7 +109,7 @@ problem2 = tibble(
 mean(pull(problem2,vec_rand_10))
 ```
 
-    ## [1] 0.4029201
+    ## [1] -0.265849
 
 That works!
 
@@ -117,7 +117,7 @@ That works!
 mean(pull(problem2,vec_logical))
 ```
 
-    ## [1] 0.7
+    ## [1] 0.4
 
 That works too!
 
@@ -142,3 +142,21 @@ mean(pull(problem2,vec_factor))
     ## [1] NA
 
 That doesn’t work either :(
+
+Apply the as.numeric function:
+
+``` r
+as.numeric(problem2$vec_char)
+as.numeric(problem2$vec_logical)
+as.numeric(problem2$vec_factor)
+```
+
+**What Happens?** When the as.numeric function is applied, the character
+vector becomes a vector of “NA” values. The logical vector becomes a
+vector of 0 and 1 numeric values. The factor vector also becomes a
+vector of numeric values 1, 2 and 3. This explains why the we were able
+to calculate the mean of the logical vector and weren’t able to
+calculate the mean of the character vector. However, it doesn’t explain
+why we weren’t able to take the mean of the factor vector. The factor
+vector can be converted to numeric values, so I’m not sure why the mean
+function did not work.

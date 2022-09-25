@@ -2,7 +2,7 @@
 title: "P8105 Homework 1"
 output: github_document
 author: Shritama Ray
-date: 9/22/2022
+date: 9/24/2022
 ---
 
 ## Problem 1
@@ -81,10 +81,10 @@ That doesn't work either :(
 
 Apply the as.numeric function:
 
-```{r apply as.numeric}
-as.numeric(vec_char)
-as.numeric(vec_logical)
-as.numeric(vec_factor)
+```{r apply as.numeric, eval=FALSE}
+as.numeric(problem2$vec_char)
+as.numeric(problem2$vec_logical)
+as.numeric(problem2$vec_factor)
 ```
 
 **What Happens?**
